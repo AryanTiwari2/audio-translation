@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Rubik';
+}
+body{
+  background-color: #dbeafe;
+}
+h1{
+  font-family: 'Libre Baskerville';
+}
+
+.animate{
+  animation-name: soundAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes soundAnimation {
+  0%{
+    color: blue;
+  }
+  25%{
+    color: rgb(0, 229, 255);
+  }
+  50%{
+    color: rgb(0, 255, 153);
+  }
+  75%{
+    color: rgb(242, 255, 0);
+  }
+  100%{
+    color: rgb(255, 38, 0);
+  }
+  
+}
