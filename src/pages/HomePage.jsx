@@ -23,7 +23,7 @@ const HomePage = () => {
       <div className={`${audioURL ? 'pointer-events-none opacity-50':''}`}>
         <RecieveAudio setAudioFile={setAudioFile} setAudioURL={setAudioURL}/>
     </div>:
-      <ReadAudio/>
+      <ReadAudio audioURL={audioURL}/>
       }
       {audioURL && !isCorrectAudio && <PlayAudio setIsCorrectAudio={setIsCorrectAudio} audioURL={audioURL} clearAudio={clearAudio}/>}
     </div>

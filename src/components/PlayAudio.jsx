@@ -8,7 +8,6 @@ const PlayAudio = (props) => {
     const [duration, setDuration] = useState(0);
   
     const togglePlayPause = () => {
-        console.log("THIS IS CALLED")
       if (isPlaying) {
         audioRef.current.pause();
       } else {
