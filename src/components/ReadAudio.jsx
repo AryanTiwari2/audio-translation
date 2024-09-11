@@ -61,7 +61,9 @@ const ReadAudio = ({audioURL}) => {
        </div>
        <div>
         <h1 className='mt-8 flex justify-center'>{text}</h1>
-        <h1 className='flex justify-center'>ABHI KE LIYE BAS ITNA HI</h1>
+        <h3 className='flex justify-center text-slate-500 italic text-lg mt-8'>
+            Wait for the next version
+        </h3>
        </div>
     </div>
     }
