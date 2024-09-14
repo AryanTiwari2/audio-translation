@@ -8,7 +8,7 @@
 body{
   background-color: #dbeafe;
 }
-h1{
+h1 , textarea{
   font-family: 'Libre Baskerville';
 }
 

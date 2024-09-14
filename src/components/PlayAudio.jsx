@@ -29,14 +29,14 @@ const PlayAudio = (props) => {
        </div>
 
         <div className='flex justify-center mt-4'>
-            <button onClick={()=>{window.location.href="/audio-translation"}} className='flex gap-1 items-center justify-center bg-white sm:w-[15%] md:w-[20%] w-[30%] text-black pl-4 pr-4 pt-1 pb-1 shadow-sm rounded-l-xl hover:bg-red-300 hover:text-white'><i className="fa-solid fa-rotate-right"></i>Retry</button>
+            <button onClick={()=>{window.location.href="/audio-translation"}} className='flex gap-1 font-bold items-center justify-center bg-white sm:w-[20%] md:w-[20%] w-[35%] text-black pl-4 pr-4 pt-1 pb-1 shadow-sm rounded-l-xl text-slate-400 hover:bg-red-300 hover:text-white'><i className="fa-solid fa-rotate-right"></i>Retry</button>
             <button onClick={togglePlayPause} className='bg-blue-400 pl-4 pr-4 text-white'> 
             {isPlaying ? 
             <i className="fa-solid fa-pause"></i>:
             <i className="fa-solid fa-play"></i>
             }
             </button>
-            <button onClick={()=>{setIsCorrectAudio(true)}} className='flex gap-1 items-center justify-center bg-white sm:w-[15%] md:w-[20%] w-[30%] text-text pl-4 pr-4 pt-1 pb-1 shadow-sm rounded-r-xl hover:bg-green-300 hover:text-white'>Transcribe</button>
+            <button onClick={()=>{setIsCorrectAudio(true)}} className='flex gap-1 font-bold items-center justify-center bg-white sm:w-[20%] md:w-[20%] w-[35%] text-text pl-4 pr-4 pt-1 pb-1 shadow-sm rounded-r-xl text-blue-400 hover:bg-green-300 hover:text-white'><i class="fa-solid fa-pen-nib"></i>Transcribe</button>
         </div>
       </>
     );

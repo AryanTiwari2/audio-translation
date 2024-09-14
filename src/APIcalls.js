@@ -1,5 +1,29 @@
 import { API } from "./constant";
 import { config } from "./config";
+import axios from 'axios';
+
+
+export const translateText = async ({text,targetLanguage}) => {
+
+    try {
+        // const response = await axios.post(`${API.translationAPI}${targetLanguage}`, {
+        //     data: text
+        // }, {
+        //     headers: {
+        //         'apikey': config.API_LAYER_API_SECRET_KEY,
+        //         'Content-Type': 'application/json'
+        //     }
+        // }
+        // );
+        // const translated = await response.data.translations[0].translation.json();
+        // console.log("API CALL SUCCESS",translated)
+        // return translated;
+    } catch (error) {
+        console.error('Error during translation:', error);
+    }
+}
+
+
 
 
 export const uploadAudio = async (audioBlob) => {

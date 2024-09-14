@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { uploadAudio,requestTranscription,pollForTranscription ,fetchBlobFromURL} from '../APIcalls';
+import Translation from './Translation';
+import Transcription from './Transcription';
 const val = [1,2,3,2,1]
 const ReadAudio = ({audioURL}) => {
 
@@ -7,6 +9,7 @@ const ReadAudio = ({audioURL}) => {
   const [loading , setLoading] = useState(true);
   const [status,setStatus] = useState('transcription');
   const [text,setText] = useState(null);
+  const [original,setOrginal] = useState(null)
 
   const processAudio = async (audioBlob) => {
     try {
@@ -23,7 +26,7 @@ const ReadAudio = ({audioURL}) => {
       //get text from id
       const response = await pollForTranscription(id);
       setText(response);
-      // console.log("text:",text);
+      setOrginal(response);
 
       setLoading(false);
     } catch (error) {
@@ -50,20 +53,17 @@ const ReadAudio = ({audioURL}) => {
        <div className='flex justify-center sm:mt-3 mt-4'>
         <button 
         onClick={()=>{setStatus('transcription')}}
-        className={`lg:w-[15%] sm:w-[25%] w-[43%] text-[20px] shadow-xl rounded-l-2xl ${status=="transcription" ? "bg-blue-400 text-white":"text-black bg-white"}`}>
+        className={`lg:w-[15%] sm:w-[25%] w-[43%] text-[20px] shadow-xl rounded-l-2xl ${status=="transcription" ? "bg-blue-400 text-white":"text-blue-400 bg-white"}`}>
           Transcription
         </button>
         <button 
         onClick={()=>{setStatus('translation')}}
-        className={`lg:w-[15%] sm:w-[25%] w-[43%] text-[20px] rounded-r-2xl shadow-xl ${status=="translation" ? "bg-blue-400 text-white":"text-black bg-white"}`}>
+        className={`lg:w-[15%] sm:w-[25%] w-[43%] text-[20px] rounded-r-2xl shadow-xl ${status=="translation" ? "bg-blue-400 text-white":"text-blue-400 bg-white"}`}>
           Translation
         </button>
        </div>
        <div>
-        <h1 className='mt-8 flex justify-center'>{text}</h1>
-        <h3 className='flex justify-center text-slate-500 italic text-lg mt-8'>
-            Wait for the next version
-        </h3>
+        {status==="translation"?<Translation text={text}/> : <Transcription text={text} setText={setText} original={original}/>}
        </div>
     </div>
     }
