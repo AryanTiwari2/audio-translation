@@ -4,23 +4,20 @@ import axios from 'axios';
 
 
 export const translateText = async ({text,targetLanguage}) => {
-
-    try {
-        // const response = await axios.post(`${API.translationAPI}${targetLanguage}`, {
-        //     data: text
-        // }, {
-        //     headers: {
-        //         'apikey': config.API_LAYER_API_SECRET_KEY,
-        //         'Content-Type': 'application/json'
-        //     }
-        // }
-        // );
-        // const translated = await response.data.translations[0].translation.json();
-        // console.log("API CALL SUCCESS",translated)
-        // return translated;
-    } catch (error) {
-        console.error('Error during translation:', error);
-    }
+        const response = await axios.post(API.rapidAPI_URL, {
+            q: text, 
+            source: "en", 
+            target: targetLanguage
+          }, {
+            headers: {
+              "Content-Type": "application/json",
+              'x-rapidapi-host': 'deep-translate1.p.rapidapi.com',
+              'x-rapidapi-key': config.Rapid_API_KEY
+            }
+          });
+        const translated = response.data.data.translations.translatedText;
+        console.log(translated);
+        return translated;
 }
 
 

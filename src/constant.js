@@ -2,7 +2,8 @@ export const API ={
     baseURL : "https://api.assemblyai.com/v2",
     upload:"upload",
     transcript : "transcript",
-    translationAPI:"https://api.apilayer.com/language_translation/translate?target="
+    translationAPI:"https://api.apilayer.com/language_translation/translate?target=",
+    rapidAPI_URL:"https://deep-translate1.p.rapidapi.com/language/translate/v2"
 }
 
 export const languageCode = {
