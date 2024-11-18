@@ -111,7 +111,7 @@ const Translation = ({ text, setLoading, statusTranslation, setStatusTranslation
             ><i class="fa-solid fa-rotate-left"></i></button>
           </div>
           <h3 className='flex justify-center text-sm text-slate-500 italic text-lg mt-8'>
-            Special thanks to tester Ronja👌
+            Love and Peace👌
           </h3>
         </div>
       }
